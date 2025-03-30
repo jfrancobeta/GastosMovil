@@ -46,7 +46,7 @@ https://github.com/jfrancobeta/GastosMovil.git
 ## 🌟 Tecnologías usadas
 
 - **Jetpack Compose** para la UI.
-- **XML** para la pantalla de inicio (Splash Screen).
+- **XML** para la pantalla de inicio (Home Screen).
 - **SharedPreferences** para guardar configuraciones del usuario.
 - **ViewModel y LiveData** para la gestión del estado.
 - **Material3** para un diseño moderno.
