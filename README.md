@@ -31,8 +31,8 @@ Gastos y Presupuesto es una aplicación de gestión financiera personal que perm
 
 ### 1. Clonar el repositorio
 ```sh
-git clone https://github.com/tu_usuario/gastos-presupuesto.git
-cd gastos-presupuesto
+https://github.com/jfrancobeta/GastosMovil.git
+
 ```
 
 ### 2. Abrir en Android Studio
