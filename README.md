@@ -8,7 +8,7 @@ Gastos y Presupuesto es una aplicación de gestión financiera personal que perm
 - **Visualización de Estadísticas**: Resumen financiero con gráficos.
 - **Interfaz Personalizable**: Cambio de color de fondo y tamaño de texto.
 - **Persistencia de Datos**: Almacenamiento con SharedPreferences.
-- **Diseño Moderno**: Splash screen en XML, resto con Jetpack Compose.
+- **Diseño Moderno**:  XML y Jetpack Compose.
 
 ## Capturas de pantalla
 
