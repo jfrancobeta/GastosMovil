@@ -110,8 +110,14 @@ GastosYPresupuesto/                # Raíz del proyecto Android
 ## 📱 Pantallas y Navegación
 
 - **HomeActivity:** Inicio de sesión.
+  ![image](https://github.com/user-attachments/assets/dd0b1780-cd9f-4a11-b97a-71d4356854e2)
+
 - **RegActivity:** Registro de nuevos usuarios.
+  ![image](https://github.com/user-attachments/assets/04531ae3-2764-4ba7-9115-2c2b8a66510a)
+
 - **MainActivity + NavHost:** Barra de navegación inferior con:
+  ![image](https://github.com/user-attachments/assets/7e261b80-8774-4611-8769-89d2984f3fd3)
+
   - **HomeScreen:** Resumen de gastos.
   - **AddTransactionScreen:** Formulario para agregar gasto/ingreso.
   - **StatsScreen:** Gráficos de distribución (ExpensePieChart).
