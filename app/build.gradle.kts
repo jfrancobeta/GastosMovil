@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.gms.google.services) to "com.google.gms:google-services:4.3.15"
 }
 
 android {
@@ -41,6 +42,10 @@ android {
 
 dependencies {
 
+    implementation("com.google.firebase:firebase-auth-ktx:23.2.0")  // Asegúrate de poner la versión correcta
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.4") {
+        exclude(group = "com.google.firebase", module = "firebase-common")
+    }
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -56,6 +61,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.database)
+    implementation(libs.androidx.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -64,3 +71,4 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+apply(plugin = "com.google.gms.google-services") // Esto aplica el plugin de Google Services

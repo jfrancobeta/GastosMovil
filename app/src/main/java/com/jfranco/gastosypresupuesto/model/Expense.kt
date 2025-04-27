@@ -1,9 +1,11 @@
 package com.jfranco.gastosypresupuesto.model
 
 data class Expense(
-    val id: Int,
-    val category: String,
-    val amount: Double,
-    val date: String
+    var id: String = "",
+    val category: String = "",
+    val amount: Double = 0.0,
+    val date: String = ""
 
-)
+){
+    constructor() : this("", "", 0.0, "")
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840353173107",
+    "project_id": "gastospresupuesto",
+    "storage_bucket": "gastospresupuesto.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840353173107:android:e3e4c3e89787d03bdb2406",
+        "android_client_info": {
+          "package_name": "com.jfranco.gastosypresupuesto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY7ljolR0qjjZN5oNfffl_GZxy9yWYh8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

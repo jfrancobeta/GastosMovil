@@ -67,12 +67,28 @@ fun AddTransactionScreen(navController: NavController, viewModel: ExpenseViewMod
         Button(
             onClick = {
                 if (name.isNotEmpty() && amount.toDoubleOrNull() != null) {
+                    val date = "2025-03-28" // Puedes cambiar por una fecha dinámica
+                    val amountValue = amount.toDouble()
+
                     if (isExpense) {
-                        viewModel.addExpense(Expense(id = (viewModel.expenses.value?.size ?: 0) + 1, category = name, amount = amount.toDouble(), date = "2025-03-28"))
+                        val expense = Expense(
+                            id = "", // lo genera Firebase
+                            category = name,
+                            amount = amountValue,
+                            date = date
+                        )
+                        viewModel.addExpense(expense)
                     } else {
-                        viewModel.addIncome(Income(id = (viewModel.incomes.value?.size ?: 0) + 1, source = name, amount = amount.toDouble(), date = "2025-03-28"))
+                        val income = Income(
+                            id = "", // lo genera Firebase
+                            source = name,
+                            amount = amountValue,
+                            date = date
+                        )
+                        viewModel.addIncome(income)
                     }
-                    navController.popBackStack() // Volver a Home
+
+                    navController.popBackStack()
                 }
             },
             modifier = Modifier.fillMaxWidth()

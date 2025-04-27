@@ -10,6 +10,7 @@ import com.jfranco.gastosypresupuesto.repository.SettingsRepository
 import com.jfranco.gastosypresupuesto.ui.AddTransactionScreen
 import com.jfranco.gastosypresupuesto.ui.DetailsScreen
 import com.jfranco.gastosypresupuesto.ui.HomeScreen
+import com.jfranco.gastosypresupuesto.ui.RegActivity
 import com.jfranco.gastosypresupuesto.ui.SettingsScreen
 import com.jfranco.gastosypresupuesto.ui.StatsScreen
 import com.jfranco.gastosypresupuesto.view.ExpenseViewModel
@@ -43,10 +44,11 @@ fun NavigationComponent(){
         }
         composable("details/{id}/{type}"){
             params ->
-            val transactionId = params.arguments?.getString("id")?.toIntOrNull() ?: 0
+            val transactionId = params.arguments?.getString("id") ?: ""
             val type = params.arguments?.getString("type") ?: ""
             DetailsScreen(navController,viewModel,settingModel,idTransaction = transactionId,type)
         }
+
 
 
 

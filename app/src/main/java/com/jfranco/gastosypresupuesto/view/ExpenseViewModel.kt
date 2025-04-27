@@ -1,51 +1,84 @@
 package com.jfranco.gastosypresupuesto.view
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.jfranco.gastosypresupuesto.model.Expense
 import com.jfranco.gastosypresupuesto.model.Income
 
 class ExpenseViewModel : ViewModel() {
-    private val _expenses = MutableLiveData<List<Expense>>(
-        listOf(
-            Expense(id = 1, category = "Comida", amount = 15.0, date = "2025-03-28"),
-            Expense(id = 2, category = "Transporte", amount = 8.0, date = "2025-03-27"),
-            Expense(id = 3, category = "Cine", amount = 20.0, date = "2025-03-26")
-        )
-    )
+    private val database = FirebaseDatabase.getInstance()
+    private val expensesRef = database.getReference("expenses")
+    private val incomesRef = database.getReference("incomes")
+
+    private val _expenses = MutableLiveData<List<Expense>>()
     val expenses: LiveData<List<Expense>> = _expenses
 
-    private val _incomes = MutableLiveData<List<Income>>(
-        listOf(
-            Income(id = 1, source = "salario", amount = 30.0, date = "2025-03-28"),
-            Income(id = 2, source = "venta", amount = 8.0, date = "2025-03-27"),
-            Income(id = 3, source = "prestamo", amount = 12.0, date = "2025-03-26")
-        )
-    )
+    private val _incomes = MutableLiveData<List<Income>>()
     val incomes: LiveData<List<Income>> = _incomes
 
 
-    fun addExpense(expense: Expense) {
-        val updateList = _expenses.value!! + expense
-        _expenses.value = updateList
+    init {
+        fetchExpenses()
+        fetchIncomes()
+    }
+    private fun fetchExpenses() {
+        expensesRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val lista = mutableListOf<Expense>()
+                for (dato in snapshot.children) {
+                    val gasto = dato.getValue(Expense::class.java)
+                    gasto?.let { lista.add(it) }
+                }
+                _expenses.value = lista
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("expensiveView", "Error al obtener los ingresos", error.toException())
+            }
+        })
     }
 
-    fun removeExpense(expenseId: Int) {
-        val updateList = _expenses.value!!.filter { it.id != expenseId }
-        _expenses.value = updateList
+    private fun fetchIncomes() {
+        incomesRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val lista = mutableListOf<Income>()
+                for (dato in snapshot.children) {
+                    val ingreso = dato.getValue(Income::class.java)
+                    ingreso?.let { lista.add(it) }
+                }
+                _incomes.value = lista
+            }
 
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("expensiveView", "Error al obtener los ingresos", error.toException())
+            }
+        })
+    }
+
+    fun addExpense(expense: Expense) {
+        val id = expensesRef.push().key!!
+        expense.id = id
+        expensesRef.child(id).setValue(expense)
+    }
+
+    fun removeExpense(expenseId: String) {
+        expensesRef.child(expenseId).removeValue()
     }
 
     fun addIncome(income: Income) {
-        val updateList = _incomes.value!! + income
-        _incomes.value = updateList
+        val id = incomesRef.push().key!!
+        income.id = id
+        incomesRef.child(id).setValue(income)
     }
 
-    fun removeIncome(incomeId: Int) {
-        val updateList = _incomes.value!!.filter { it.id != incomeId }
-        _incomes.value = updateList
-
+    fun removeIncome(incomeId: String) {
+        incomesRef.child(incomeId).removeValue()
     }
 
 }

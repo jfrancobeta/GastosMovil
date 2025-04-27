@@ -26,7 +26,7 @@ import com.jfranco.gastosypresupuesto.view.ExpenseViewModel
 import com.jfranco.gastosypresupuesto.view.SettingsViewModel
 
 @Composable
-fun DetailsScreen(navController: NavController, viewModel: ExpenseViewModel,settingModel: SettingsViewModel, idTransaction:Int, type:String) {
+fun DetailsScreen(navController: NavController, viewModel: ExpenseViewModel,settingModel: SettingsViewModel, idTransaction:String, type:String) {
 
 
     val expenses by viewModel.expenses.observeAsState(emptyList())

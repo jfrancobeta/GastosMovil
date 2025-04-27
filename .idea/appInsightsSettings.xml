@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.jfranco.gastosypresupuesto" />
+                  <option name="mobileSdkAppId" value="1:840353173107:android:e3e4c3e89787d03bdb2406" />
+                  <option name="projectId" value="gastospresupuesto" />
+                  <option name="projectNumber" value="840353173107" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
