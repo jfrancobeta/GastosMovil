@@ -1,6 +1,6 @@
-# GastosMóvil (Gastos y Presupuesto)
+# GastosMóvil (Gastos y Presupuesto) juan david franco betancur
 
-**GastosMóvil** es una aplicación **Android** desarrollada en **Kotlin** con **Jetpack Compose** que permite llevar el registro de gastos e ingresos personales. Este proyecto corresponde al parcial de la asignatura y su objetivo principal ha sido implementar la capa de **autenticación** con **Firebase Authentication (Email/Password)** y preparar la base para la **persistencia en Firestore**.
+**GastosMóvil** es una aplicación **Android** desarrollada en **Kotlin** con **Jetpack Compose** que permite llevar el registro de gastos e ingresos personales.  
 
 ---
 
@@ -15,7 +15,7 @@
 7. [Pantallas y Navegación](#pantallas-y-navegación)
 8. [Arquitectura](#arquitectura)
 9. [Ejecución](#ejecución)
-10. [Licencia](#licencia)
+
 
 ---
 
@@ -37,7 +37,7 @@
 - **Autenticación y BD:** Firebase Authentication & Firestore
 - **Navegación:** AndroidX Navigation Compose
 - **ViewModel:** AndroidX Lifecycle ViewModel
-- **Inyección sencilla:** ViewModelProvider
+
 
 ---
 
@@ -110,12 +110,15 @@ GastosYPresupuesto/                # Raíz del proyecto Android
 ## 📱 Pantallas y Navegación
 
 - **HomeActivity:** Inicio de sesión.
+  
   ![image](https://github.com/user-attachments/assets/dd0b1780-cd9f-4a11-b97a-71d4356854e2)
 
 - **RegActivity:** Registro de nuevos usuarios.
+  
   ![image](https://github.com/user-attachments/assets/04531ae3-2764-4ba7-9115-2c2b8a66510a)
 
 - **MainActivity + NavHost:** Barra de navegación inferior con:
+  
   ![image](https://github.com/user-attachments/assets/7e261b80-8774-4611-8769-89d2984f3fd3)
 
   - **HomeScreen:** Resumen de gastos.
@@ -146,12 +149,4 @@ Patrón **MVVM**:
 
 ---
 
-## 📄 Licencia
 
-Este proyecto está bajo la **Licencia MIT**. Ver `LICENSE` para más detalles.
-
----
-
-**Fecha de entrega parcial:** Abril 27
-
-*Desarrollado por: Juan, Yulder, Diego y Franco*
