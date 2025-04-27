@@ -82,15 +82,10 @@ GastosYPresupuesto/                # Raíz del proyecto Android
 
 ## ⚙️ Instalación y Configuración
 
-1. Clona este repositorio:
-   ```bash
-git clone https://github.com/jfrancobeta/GastosMovil.git
-cd GastosYPresupuesto
-   ```
-2. Abre el proyecto en Android Studio.
-3. Copia tu `google-services.json` (desde Firebase Console) dentro de `app/`.
-4. Asegúrate de tener habilitado en **Authentication** > **Correo/Contraseña** en la consola de Firebase.
-5. Sincroniza Gradle: Android Studio detectará los plugins de Firebase.
+1. Abre el proyecto en Android Studio.
+2. Copia tu `google-services.json` (desde Firebase Console) dentro de `app/`.
+3. Asegúrate de tener habilitado en **Authentication** > **Correo/Contraseña** en la consola de Firebase.
+4. Sincroniza Gradle: Android Studio detectará los plugins de Firebase.
 
 ---
 
